@@ -1,5 +1,5 @@
 /**********************************
-* Name: Noah Watso
+* Name: Noah Watson
 * Email: nwatson2@nd.edu
  * File Name: sudoku.c
  * Date Created: 9/8/21
@@ -21,6 +21,7 @@ void free_puzzle ( int** sudoku ){
   long unsigned int i = 0;
   for(i=0; i<COLS; ++i){
     free(sudoku[i]);
+  }
 }
 
 void read_puzzle(int** sudoku, FILE* filein){
@@ -31,7 +32,7 @@ void read_puzzle(int** sudoku, FILE* filein){
   while(filein != NULL){
     //read integer from file
     int tempn;
-    fscanf(input_file, "%d\n", &tempn);
+    fscanf(filein, "%d\n", &tempn);
     // place integer into sudoku
     sudoku[rowin][colin] = tempn;
     // incriment row or col
@@ -73,7 +74,8 @@ unsigned int check_puzzle(int** sudoku){
         return 0;
       }
     }
-    return 1;
+  }
+  return 1;
 }
 
 void insert_and_check_puzzle(int** sudoku){
@@ -84,16 +86,16 @@ void insert_and_check_puzzle(int** sudoku){
   printf("\nInsert the value, row, and column here:");
   scanf("%d %lu %lu", &val, &row, &col);
 
-  if(value < 1 || value > 9){
-    fprintf(stderr, "Error: value is outside of domain [1-9]\n")
+  if(val < 1 || val > 9){
+    fprintf(stderr, "Error: value is outside of domain [1-9]\n");
     return;
   }
-  if(row < 0 || row > 8){
-    fprintf(stderr, "Error: row is outside of domain [0-8]\n")
+  if(row <= 0 || row > 8){
+    fprintf(stderr, "Error: row is outside of domain [0-8]\n");
     return;
   }
-  if(col < 0 || col > 8){
-    fprintf(stderr, "Error: col is outside of domain [0-8]\n")
+  if(col <= 0 || col > 8){
+    fprintf(stderr, "Error: col is outside of domain [0-8]\n");
     return;
   }
 
