@@ -1,5 +1,5 @@
 /**********************************
- * Name: Noah Watso
+ * Name: Noah Watson
  * Email: nwatson2@nd.edu
  * File Name: PC01.c
  * Date Created: 9/8/2021
