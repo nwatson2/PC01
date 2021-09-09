@@ -8,7 +8,7 @@
 PP:= gcc
 
 # CFLAGS are the required compiler flags for the CSE 20312 course
-CFLAGS := -O2 -g -Wall -Wextra -Wconversion -Wshadow -std=c11 -Werror -lm -c
+CFLAGS := -O2 -g -Wall -Wextra -Wconversion -Wshadow -std=c11 -Werror -lm
 
 #make PC01
 PC01.o: PC01.c
